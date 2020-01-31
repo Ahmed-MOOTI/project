@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Projet Mini ERP | </title>
+
+  <!-- Bootstrap -->
+  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- bootstrap-progressbar -->
+  <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+  <!-- PNotify -->
+  <!-- <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet"> -->
+
+  <!-- Custom Theme Style -->
+  <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col" id="sidefixed" style="position: fixed">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Projet ERP</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="mooti.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Director</span>
+              <h2>John Smith</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a href="add-new.html"><i class="fa fa-edit"></i> Add New User</a>
+                </li>
+                <li><a href="calendar.html"><i class="fa fa-desktop"></i> Calendar </a>
+                </li>
+                <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-bug"></i> Leave Request <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="resumeadmin.html">Answer Request</a></li>
+                  </ul>
+                </li>
+                <li onclick="adddirector()"><a href="Crud-User.html"><i class="fa fa-windows"></i> Crud User </a>
+                </li>
+                <li><a href="login.html"><i class="fa fa-windows"></i> Login Page </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="mooti.jpg" alt="">John Smith
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <!-- <span class="badge bg-green">6</span> -->
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Add User</h3>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><i class="fa fa-bars"></i> Form</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+
+                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#tab_content0" id="home-tab0" role="tab"
+                        data-toggle="tab" aria-expanded="true">Admin</a>
+                      </li>
+                      <li role="presentation" class=""><a href="#tab_content1" id="home-tab" role="tab"
+                          data-toggle="tab" aria-expanded="true">Director</a>
+                      </li>
+                      <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab"
+                          data-toggle="tab" aria-expanded="false">Employee</a>
+                      </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div role="tabpanel" class="tab-pane fade active in" id="tab_content0" aria-labelledby="home-tab0">
+                        <div class="x_content">
+
+                          <form class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">Admin Add</span>
+
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Username <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="nameadmin" class="form-control col-md-7 col-xs-12"
+                                  data-validate-length-range="6" name="name" type="text" onblur="usernameadmin()">
+                              </div>
+                            </div>
+                            <div id="u" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="emailadmin" name="email" class="form-control col-md-7 col-xs-12"
+                                  onblur="verifMailadmin()">
+                              </div>
+                            </div>
+                            <div id="m" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="emailadmin2" name="confirm_email" data-validate-linked="email"
+                                  required="required" class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Accounting Number
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="number" id="accountadmin" name="number" required="required"
+                                  data-validate-minmax="0,1000" class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label for="password" class="control-label col-md-3">Password <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="passwordadmin" type="password" name="password" data-validate-length="6,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="paswordadmin()">
+                              </div>
+                            </div>
+                            <div id="p" align="center"></div>
+                            <div class="item form-group">
+                              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="passwordadmin2" type="password" name="password2" data-validate-linked="password"
+                                  class="form-control col-md-7 col-xs-12" onblur="confirmadmin()">
+                              </div>
+                            </div>
+                            <div id="c.p" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="tel" id="phoneadmin" name="phone" data-validate-length-range="8,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="phoneadmin()">
+                              </div>
+                            </div>
+                            <div id="phon" align="center"></div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">More informations</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <textarea class="resizable_textarea form-control" id="admin-info"
+                                  placeholder="Please enter a description of the position and the authorized acces for thid employee..."></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group"><p id="adress"></p></div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                              <div class="col-md-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary" name="actualiser"
+                                  value="actualiser">Cancel</button>
+                                <button type="button" class="btn btn-success" name="register" value="register"
+                                  onclick="addadmin()">Submit</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content1" aria-labelledby="home-tab">
+                        <div class="x_content">
+
+                          <form class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">Director Add</span>
+
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Username <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="namedir" class="form-control col-md-7 col-xs-12"
+                                  data-validate-length-range="6" name="name" type="text" onblur="username()">
+                              </div>
+                            </div>
+                            <div id="u" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="emaildir" name="email" class="form-control col-md-7 col-xs-12"
+                                  onblur="verifMail()">
+                              </div>
+                            </div>
+                            <div id="m" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email"
+                                  required="required" class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Accounting Number
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="number" id="account" name="number" required="required"
+                                  data-validate-minmax="0,1000" class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label for="password" class="control-label col-md-3">Password <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="passworddir" type="password" name="password" data-validate-length="6,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="pasword()">
+                              </div>
+                            </div>
+                            <div id="p" align="center"></div>
+                            <div class="item form-group">
+                              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="password2" type="password" name="password2" data-validate-linked="password"
+                                  class="form-control col-md-7 col-xs-12" onblur="confirm()">
+                              </div>
+                            </div>
+                            <div id="c.p" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 " for="telephone">Telephone <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="tel" id="phonedir" name="phone" data-validate-length-range="8,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="phone()">
+                              </div>
+                            </div>
+                            <div id="phon" align="center"></div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">More informations</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <textarea class="resizable_textarea form-control" id="more-info"
+                                  placeholder="Please enter a description of the position and the authorized acces for thid employee..."></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group"><p id="adressdir"></p></div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                              <div class="col-md-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary" name="actualiser"
+                                  value="actualiser">Cancel</button>
+                                <button type="button" class="btn btn-success" name="register" value="register"
+                                  onclick="adding()">Submit</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                        <div class="x_content">
+
+                          <form class="form-horizontal form-label-left" novalidate>
+
+                            <span class="section">Employee Add</span>
+
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Username <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="nameemp" class="form-control col-md-7 col-xs-12"
+                                  data-validate-length-range="6" name="name" type="text" onblur="usernamemp()">
+                              </div>
+                            </div>
+                            <div id="ue" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="emailemp" name="email" class="form-control col-md-7 col-xs-12"
+                                  onblur="verifMailemp()">
+                              </div>
+                            </div>
+                            <div id="me" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" id="email2" name="confirm_email" data-validate-linked="email"
+                                  class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Accounting Number
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="number" id="number" name="number" required="required"
+                                  data-validate-minmax="0,1000" class="form-control col-md-7 col-xs-12">
+                              </div>
+                            </div>
+                            <div class="item form-group">
+                              <label for="password" class="control-label col-md-3">Password <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="passwordemp" type="password" name="password" data-validate-length="6,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="paswordemp()">
+                              </div>
+                            </div>
+                            <div id="pe" align="center"></div>
+                            <div class="item form-group">
+                              <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password
+                                <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="confirmemp" type="password" name="password2" data-validate-linked="password"
+                                  class="form-control col-md-7 col-xs-12" onblur="confirmemp()">
+                              </div>
+                            </div>
+                            <div id="c.pe" align="center"></div>
+                            <div class="item form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone <span
+                                  class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="tel" id="phoneemp" name="phone" data-validate-length-range="8,8"
+                                  class="form-control col-md-7 col-xs-12" onblur="phonemp()">
+                              </div>
+                            </div>
+                            <div id="pho" align="center"></div>
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">More informations</label>
+                              <div class="col-md-9 col-sm-9 col-xs-12">
+                                <textarea class="resizable_textarea form-control" id="employee-info"
+                                  placeholder="Please enter a description of the position and the authorized acces for thid employee..."></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group"><p id="adressemp"></p></div>
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                              <div class="col-md-6 col-md-offset-3">
+                                <button type="submit" class="btn btn-primary">Cancel</button>
+                                <button type="button" class="btn btn-success" name="register" value="register"
+                                  onclick="addingemp()">Submit</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Projet Mini ERP - Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="../vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../vendors/nprogress/nprogress.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="../vendors/iCheck/icheck.min.js"></script>
+  <!-- PNotify -->
+  <script src="../vendors/pnotify/dist/pnotify.js"></script>
+  <script src="../vendors/pnotify/dist/pnotify.buttons.js"></script>
+  <script src="../vendors/pnotify/dist/pnotify.nonblock.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+  <script src="adduser.js"></script>
+
+
+</body>
+
+</html>
