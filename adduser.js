@@ -1610,19 +1610,19 @@ function Editer(index) {
               <div class="item form-group">
               <label class="control-label col-md-12 col-sm-12 col-xs-12" for="name">Username</label>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input value='${listADD[i].username}' id="useremp" class="form-control col-md-12 col-sm-12 col-xs-12" data-validate-length-range="6" name="name" type="text">
+                <input value='${listADD[i].username}' id="useremp" class="form-control col-md-12 col-sm-12 col-xs-12" style="color:red" data-validate-length-range="6" name="name" type="text">
               </div>
             <div align="center" ></div>
               <div class="item form-group">
               <label class="control-label col-md-12 col-sm-12 col-xs-12" for="email">Email</label>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input value='${listADD[i].email}' type="email" id="emailemp" name="email" class="form-control col-md-12 col-sm-12 col-xs-12">
+                <input value='${listADD[i].email}' type="email" id="emailemp" name="email" style="color:red" class="form-control col-md-12 col-sm-12 col-xs-12">
               </div>
             <div align="center" ></div>
               <div class="item form-group">
               <label class="control-label col-md-12 col-sm-12 col-xs-12" for="number">Accounting Number</label>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input value='${listADD[i].account}' type="number" id="numberemp" name="number" data-validate-minmax="0,1000" class="form-control col-md-12 col-sm-12 col-xs-12">
+                <input value='${listADD[i].account}' type="number" id="numberemp" name="number" data-validate-minmax="0,1000" style="color:red" class="form-control col-md-12 col-sm-12 col-xs-12">
               </div>
               </div>
             <div align="center" ></div>
@@ -1636,7 +1636,7 @@ function Editer(index) {
               <div class="item form-group">
               <label for="tel" class="control-label col-md-12 col-sm-12 col-xs-12">Date de modification </label>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <input value='${listADD[i].date}' id="dateemp" type="tel" name="date" class="form-control col-md-12 col-sm-12 col-xs-12">
+                <input value='${listADD[i].date}' id="dateemp" type="tel" name="date" style="color:red" class="form-control col-md-12 col-sm-12 col-xs-12">
               </div>
               </div>
               <div align="center" ></div>
@@ -1683,12 +1683,8 @@ function Editer(index) {
 
     for (let i = 0; i < listemp.length; i++) {
       if (index==listemp[i].id) {
-    listemp[i].username= document.getElementById('useremp').value
-    listemp[i].email= document.getElementById('emailemp').value
-    listemp[i].account= document.getElementById('numberemp').value
     listemp[i].psw= document.getElementById('passwemp').value
     listemp[i].num= document.getElementById('phonemp').value
-    listemp[i].date= document.getElementById('dateemp').value
     listemp[i].info= document.getElementById('infoemp').value
     listemp[i].adresse= document.getElementById('adresseemp').value
       }

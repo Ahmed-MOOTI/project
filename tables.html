@@ -47,36 +47,36 @@
 
             <br />
 
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <ul class="nav side-menu">
-                  <li><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
-                  <li><a href="add-new.html"><i class="fa fa-edit"></i> Add New User</a>
-                  </li>
-                  <li><a href="calendar.html"><i class="fa fa-desktop"></i> Calendar </a>
-                  </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bug"></i> Leave Request <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="projects.html">Answer Request</a></li>
-                      <li><a href="contacts.html">Holiday Request</a></li>
-                    </ul>
-                  </li>
-                  <li onclick="adddirector()"><a href="Crud-User.html"><i class="fa fa-windows"></i> Crud user </a>
-                  </li>
-                  <li><a href="login.html"><i class="fa fa-windows"></i> Login Page </a>
-                  </li>              
-                </ul>
-              </div>
-
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="index2.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li><a href="add-new2.html"><i class="fa fa-edit"></i> Add New User</a>
+                </li>
+                <li><a href="calendar.html"><i class="fa fa-desktop"></i> Calendar </a>
+                </li>
+                <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="tables.html">Tables</a></li>
+                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-bug"></i> Leave Request <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="resumedir.html">Answer Request</a></li>
+                    <li><a href="requestdir.html">Holiday Request</a></li>
+                  </ul>
+                </li>
+                <li role="active" onclick="addemp()"><a href="Crud-Employee.html"><i class="fa fa-windows"></i> Crud-Employee </a>
+                </li>
+                <li><a href="login.html"><i class="fa fa-windows"></i> Login Page </a>
+                </li>
+              </ul>
             </div>
-            <!-- /sidebar menu -->
+
+          </div>
+          <!-- /sidebar menu -->
           </div>
         </div>
 
@@ -180,18 +180,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Tables <small>Some examples to get you started</small></h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
-                </div>
+                <h3>Gestion des catégories </h3>
               </div>
             </div>
 
@@ -200,29 +189,15 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Table design <small>Custom design</small></h2>
+                    <h2> CRUD catégories</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="x_content">
-
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
