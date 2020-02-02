@@ -1528,12 +1528,20 @@ function Editer(index) {
                 <li><p> <strong>Address:</strong>${listADD[i].adresse}</p>
               </ul>
             </div>
-            <div class="right col-xs-5 ">
-                <input id="inputFileToLoad" class="file-input" type="file" onchange="encodeImageFileAsURLemp(${listADD[i].id})">
+            <div class="right col-xs-5">
+            <div class="upload-img">
+            <div class="change-photo-btn">
+              <input type="file" class="upload" onchange ="openFile(event)">             
             </div>
-            <div id="imgTest">
-             <img src="${listADD[i].picture}">
             </div>
+            <div class="profile-img">
+              <img src="assets/img/mooti.jpg" alt="User Image" id="avatarimg" style="height: 250px;
+              width: 250px; border-radius: 4px;">
+            </div>
+            <div class="submit-section submit-btn-bottom">  
+            <input type="button" class="btn btn-success submit-btn" value="Save changes" onclick="Modify(${listADD[i].id})">
+            </div>
+          </div>
           </div>
           <div class="col-xs-12 bottom text-center">
             <div class="col-xs-12 col-sm-6 text-left">
@@ -1557,29 +1565,82 @@ function Editer(index) {
   }
 
   /****************************************************************************************/
-    function encodeImageFileAsURLemp(index) {
+// ___________________________________________________________________________________________
 
-      var listADD= JSON.parse(localStorage.getItem('employees'))
-      var filesSelected = document.getElementById("inputFileToLoad").files;
-      if (filesSelected.length > 0) {
-        var fileToLoad = filesSelected[0];
-  
-        var fileReader = new FileReader();
-  
-        fileReader.onload = function(fileLoadedEvent) {
-          var srcData = fileLoadedEvent.target.result; // <--- data: base64
-  
-          var newImage = document.createElement('img');
-          newImage.src = srcData;
-  
-          document.getElementById("imgTest").innerHTML = newImage.outerHTML;
-          // alert( document.getElementById("imgTest").innerHTML);
+var imgUpdate = "";
+var imgsUpdate = "";
+function openFile(event) {
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function(){
+        imgUpdate = reader.result;
+        document.getElementById("avatarimg").src = imgUpdate;
+        document.getElementById("leftavatar").src = imgUpdate
+        document.getElementById("topavatar").src = imgUpdate
+        document.getElementById("menuavatar").src = imgUpdate
+
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+
+function openImage(event) {
+    
+    var input = event.target;
+    var reader = new FileReader();
+    reader.onload = function(){
+        imgsUpdate = reader.result;
+
+        console.log(imgsUpdate);
+        document.getElementById("output").src = imgsUpdate
+
+
+
+    };
+    reader.readAsDataURL(input.files[0]);
+
+  };  
+
+// ___________________________________________________________________________________________
+
+function Modify(index) {
+    var listADD = JSON.parse(localStorage.getItem('employees'))
+    for (i = 0; i < listADD.length; i++) {     
+      if (index == listADD[i].id){
+            companyInfos = {
+                adress : document.getElementById('CompanyAddress').value,
+                state : document.getElementById('state').value,
+                zipCode : document.getElementById('zipCode').value,
+                awards : document.getElementById('awards').value,
+            }
+            var index = companyProfiles.map(item => {return item.companyId}).indexOf(companyInfos.companyId);
+            if(imgUpdate !== "")
+            {
+                companyInfos['img'] = imgUpdate;
+                console.log(imgUpdate);
+                
+            }else {
+                companyInfos['img'] = companyProfiles[index].img;
+                console.log(index);
+                
+            }
+            if(imgsUpdate !== "") {
+                companyInfos['imgs'] = imgsUpdate;
+            }else {
+                companyInfos['imgs'] = companyProfiles[index].imgs;
+
+            }
+            if(index !== -1) {
+                companyProfiles[index] = companyInfos;
+
+            } else {
+                companyProfiles.push(companyInfos);
+            }
+            localStorage.setItem("companyProfiles", JSON.stringify( companyProfiles));
+            location.replace("http://127.0.0.1:5500/Company%20Profile.html")
         }
-        fileReader.readAsDataURL(fileToLoad);
-        listADD[i].picture="srcData";
-      }
-      addingemp()
     }
+
+}   
 
   /****************************************************************************************/
   function editownprofilemp(index){
