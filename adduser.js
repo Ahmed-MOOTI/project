@@ -1549,7 +1549,7 @@ function Editer(index) {
             </div>
             </div>
             <div class="profile-img">
-              <img src="./images/user.png" alt="User Image" id="avatarimg" style="height: 250px;
+              <img src="${listADD[i].pictureemp}" alt="User Image" id="avatarimg" style="height: 250px;
               width: 250px; border-radius: 4px;">
             </div>
 
@@ -1607,6 +1607,31 @@ function openFile(event) {
     reader.readAsDataURL(input.files[0]);
       }
 
+  /****************************************************************************************/
+//   function setimages(){
+//     var menu = document.getElementById("tabcontentemp")
+//     var data=''
+    
+//     var listADD = JSON.parse(localStorage.getItem('employees'))
+//     var listuser =JSON.parse(localStorage.getItem("conecemployees"))
+//     var j =listuser.length-1
+//     if ((listADD || null) && (listuser || null)) { 
+
+//       for (i = 0; i < listADD.length; i++) {
+     
+        
+//         if (listADD[i].id==listuser[j].idemp) {
+//     document.getElementById("avatarimg").src = listADD[i].pictureemp
+//     document.getElementById("leftavatar").src = listADD[i].pictureemp
+//     document.getElementById("topavatar").src = listADD[i].pictureemp
+//     data += `
+//     <a href="#" class="booking-doc-img"></a>
+//     <img src="listADD[i].pictureemp" alt="User Image" id="leftavatar" class="img-circle profile_img">
+//     </a>
+//     `
+//   }}
+//   menu.innerHTML = data;}
+// }
   /****************************************************************************************/
   function editownprofilemp(index){
     var edd = document.getElementById('editprofileemp')
@@ -1727,70 +1752,3 @@ function openFile(event) {
     var edite=''
     edd.innerHTML=edite
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // function encodeImageFileAsURLdir() {
-
-    //   var listadmin= JSON.parse(localStorage.getItem('admins'))
-    //   var filesSelected = document.getElementById("inputFileToLoad").files;
-    //   if (filesSelected.length > 0) {
-    //     var fileToLoad = filesSelected[0];
-  
-    //     var fileReader = new FileReader();
-  
-    //     fileReader.onload = function(fileLoadedEvent) {
-    //       var srcData = fileLoadedEvent.target.result; // <--- data: base64
-  
-    //       var newImage = document.createElement('img');
-    //       newImage.src = srcData;
-  
-    //       document.getElementById("imgTest").innerHTML = newImage.outerHTML;
-    //       alert( document.getElementById("imgTest").innerHTML);
-    //     }
-    //     fileReader.readAsDataURL(fileToLoad);
-    //   }
-    //   // addadmin()
-    // }

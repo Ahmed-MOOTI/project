@@ -31,17 +31,17 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col" id="sidefixed" style="position: fixed" >
+        <div class="col-md-3 left_col" id="sidefixed" style="position: fixed">
           <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
+            <div class="navbar nav_title" style="border: 0" >
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Projet ERP</span></a>
             </div>
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
+            <div class="profile clearfix" >
+              <div class="profile_pic" id="menu">
                   <a href="#" class="booking-doc-img"></a>
                     <img src="./images/user.png" alt="User Image" id="leftavatar" class="img-circle profile_img">
                   </a>
@@ -59,19 +59,19 @@
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
               <ul class="nav side-menu">
-                <li><a href="index3.html"><i class="fa fa-home"></i> Dashboard</a></li>
-                <li><a href="calendaremp.html"><i class="fa fa-desktop"></i> Calendar </a>
+                <li onclick="setimages()"><a href="index3.html"><i class="fa fa-home"></i> Dashboard</a></li>
+                <li onclick="setimages()"><a href="calendaremp.html"><i class="fa fa-desktop"></i> Calendar </a>
                 </li>
-                <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                <li onclick="setimages()"><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="tables.html">Tables</a></li>
                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-bug"></i> Leave Request <span class="fa fa-chevron-down"></span></a>
+                <li onclick="setimages()"><a><i class="fa fa-bug"></i> Leave Request <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="resumeemp.html">Answer Request</a></li>
-                    <li><a href="requestemp.html">Holiday Request</a></li>
+                    <li onclick="setimages()"><a href="resumeemp.html">Answer Request</a></li>
+                    <li onclick="setimages()"><a href="requestemp.html">Holiday Request</a></li>
                   </ul>
                 </li>
                 <li><a href="login.html"><i class="fa fa-windows"></i> Login Page </a>
@@ -85,7 +85,7 @@
         </div>
 
         <!-- top navigation -->
-        <div class="top_nav">
+        <div class="top_nav" >
           <div class="nav_menu">
             <nav>
               <div class="nav toggle">
