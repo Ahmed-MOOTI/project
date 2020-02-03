@@ -385,10 +385,18 @@ function canceladmin(i) {
                 <li> <p><strong>Address:</strong> ${listADD[i].adresse}</p><br>
               </ul>
             </div>
-            <div class="right col-xs-5 " id="imgTest">
-                <input id="inputFileToLoad" class="file-input" type="file" onchange="encodeImageFileAsURL(${listADD[i].id})">
-                <img onload="${listADD[i].picture}" class="rounded-circle">
+            <div class="right col-xs-5 " >
+            <div class="upload-img">
+            <div class="change-photo-btn">
+              <input type="file" class="upload" onchange ="openFilead(event)">             
             </div>
+            </div>
+            <div class="profile-img">
+              <img src="./imagesuser.png" alt="User Image" id="avatarimgad" style="height: 250px;
+              width: 250px; border-radius: 4px;">
+            </div>
+
+          </div>
           </div>
           <div class="col-xs-12 bottom text-center">
             <div class="col-xs-12 col-sm-6 text-left">
@@ -412,42 +420,35 @@ function canceladmin(i) {
   }
 
   /****************************************************************************************/
-    function encodeImageFileAsURL() {
 
-      var listADD = JSON.parse(localStorage.getItem('admins'))
-      var listuser =JSON.parse(localStorage.getItem("conectadmin"))
-      var j =listuser.length-1
-      if (listADD || null) { 
+  function openFilead(event) {
+    var imgUpdate = "";
+    var input = event.target;
+    var reader = new FileReader();   
+       reader.onload = function(){
+
+        var listadmin = JSON.parse(localStorage.getItem("admins"))
+        var listADD = JSON.parse(localStorage.getItem("conectadmin"))
+        var j =listADD.length-1
+        for (let i = 0; i < listadmin.length; i++) {
+          if (listADD[j].idadmin==listadmin[i].id) {
+
+         imgUpdate = reader.result;
+         console.log(imgUpdate)
+
+         document.getElementById("avatarimgad").src = imgUpdate
+         document.getElementById("leftavatarad").src = imgUpdate
+         document.getElementById("topavatarad").src = imgUpdate
+
+         listdir[i].picturedir= document.getElementById("avatarimgad").src
+         localStorage.setItem("admins", JSON.stringify(listadmin));
+         console.log(listadmin)
+          };
+        }
+        };
+    reader.readAsDataURL(input.files[0]);
+      }
   
-        for (i = 0; i < listADD.length; i++) {
-          if (listADD[i].id==listuser[j].idadmin) {
-
-            var filesSelected = document.getElementById("inputFileToLoad").files;
-            if (filesSelected.length > 0) {
-               var fileToLoad = filesSelected[0];
-               var fileReader = new FileReader();
-  
-               fileReader.onload = function(fileLoadedEvent) {
-               var srcData = fileLoadedEvent.target.result; // <--- data: base64
-              //  listADD[i].picture=srcData;
-              //  localStorage.setItem("admins", JSON.stringify(listADD));
-               var newImage = document.createElement('img');
-               newImage.src = srcData;
-  
-               document.getElementById("imgTest").innerHTML = newImage.outerHTML;
-               // alert( document.getElementById("imgTest").innerHTML);
-               console.log(newImage);
-
-               }
-             fileReader.readAsDataURL(fileToLoad);
-
-             }
-          }
-       }
-     }
-      // addadmin()
-    }
-
   /****************************************************************************************/
   function editownprofil(index){
     var edd = document.getElementById('editprofile')
@@ -964,11 +965,17 @@ function canceldir(i) {
               </ul>
             </div>
             <div class="right col-xs-5 ">
-                <input id="inputFileToLoad" class="file-input" type="file" onchange="encodeImageFileAsURLdir()" class="rounded-circle">
+            <div class="upload-img">
+            <div class="change-photo-btn">
+              <input type="file" class="upload" onchange ="openFiledir(event)">             
             </div>
-            <div id="imgTest">
-             <img src="./images/img.jpg" class="rounded-circle" width="304" height="236">
             </div>
+            <div class="profile-img">
+              <img src="./images/user.png" alt="User Image" id="avatarimgdir" style="height: 250px;
+              width: 250px; border-radius: 4px;">
+            </div>
+
+          </div>
           </div>
           <div class="col-xs-12 bottom text-center">
             <div class="col-xs-12 col-sm-6 text-left">
@@ -992,28 +999,34 @@ function canceldir(i) {
   }
 
   /****************************************************************************************/
-    function encodeImageFileAsURLdir() {
 
-      var listadmin= JSON.parse(localStorage.getItem('admins'))
-      var filesSelected = document.getElementById("inputFileToLoad").files;
-      if (filesSelected.length > 0) {
-        var fileToLoad = filesSelected[0];
-  
-        var fileReader = new FileReader();
-  
-        fileReader.onload = function(fileLoadedEvent) {
-          var srcData = fileLoadedEvent.target.result; // <--- data: base64
-  
-          var newImage = document.createElement('img');
-          newImage.src = srcData;
-  
-          document.getElementById("imgTest").innerHTML = newImage.outerHTML;
-          alert( document.getElementById("imgTest").innerHTML);
+function openFiledir(event) {
+    var imgUpdate = "";
+    var input = event.target;
+    var reader = new FileReader();   
+       reader.onload = function(){
+
+        var listdir = JSON.parse(localStorage.getItem("directors"))
+        var listADD = JSON.parse(localStorage.getItem("conecdirector"))
+        var j =listADD.length-1
+        for (let i = 0; i < listdir.length; i++) {
+          if (listADD[j].iddir==listdir[i].id) {
+
+         imgUpdate = reader.result;
+         console.log(imgUpdate)
+
+         document.getElementById("avatarimgdir").src = imgUpdate
+         document.getElementById("leftavatardir").src = imgUpdate
+         document.getElementById("topavatardir").src = imgUpdate
+
+         listdir[i].picturedir= document.getElementById("avatarimgdir").src
+         localStorage.setItem("directors", JSON.stringify(listdir));
+         console.log(listdir)
+          };
         }
-        fileReader.readAsDataURL(fileToLoad);
+        };
+    reader.readAsDataURL(input.files[0]);
       }
-      // addadmin()
-    }
 
   /****************************************************************************************/
   function editownprofildir(index){
@@ -1562,10 +1575,7 @@ function Editer(index) {
     }
   
   }
-  // <div class="submit-section submit-btn-bottom">  
-  // <input type="button" class="btn btn-success submit-btn" value="Save changes" onclick="Modify(${listADD[i].id})">
-  // </div>
-  /****************************************************************************************/
+
 // ___________________________________________________________________________________________
 
 var imgUpdate = "";
@@ -1595,42 +1605,7 @@ function openFile(event) {
         }
         };
     reader.readAsDataURL(input.files[0]);
-
-
       }
-// ___________________________________________________________________________________________
-
-// function Modify(index) {
-//     var listADD = JSON.parse(localStorage.getItem('employees'))
-//     for (i = 0; i < listADD.length; i++) {     
-//       if (index == listADD[i].id){
-//             if(imgUpdate !== "")
-//             {
-//                 pictureemp['img'] = imgUpdate;
-//                 console.log(imgUpdate);
-                
-//             }else {
-//               pictureemp['img'] = pictureemp[index].img;
-//                 console.log(index);
-                
-//             }
-//             if(imgsUpdate !== "") {
-//               pictureemp['imgs'] = imgsUpdate;
-//             }else {
-//               pictureemp['imgs'] = pictureemp[index].imgs;
-
-//             }
-//             if(index !== -1) {
-//               pictureemp[index] = pictureemp;
-
-//             } else {
-//               pictureemp.push(pictureemp);
-//             }
-//             localStorage.setItem("employees", JSON.stringify( pictureemp));
-//             // location.replace("http://127.0.0.1:5500/Company%20Profile.html")
-//         }
-//     }
-//   }
 
   /****************************************************************************************/
   function editownprofilemp(index){
@@ -1752,3 +1727,70 @@ function openFile(event) {
     var edite=''
     edd.innerHTML=edite
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // function encodeImageFileAsURLdir() {
+
+    //   var listadmin= JSON.parse(localStorage.getItem('admins'))
+    //   var filesSelected = document.getElementById("inputFileToLoad").files;
+    //   if (filesSelected.length > 0) {
+    //     var fileToLoad = filesSelected[0];
+  
+    //     var fileReader = new FileReader();
+  
+    //     fileReader.onload = function(fileLoadedEvent) {
+    //       var srcData = fileLoadedEvent.target.result; // <--- data: base64
+  
+    //       var newImage = document.createElement('img');
+    //       newImage.src = srcData;
+  
+    //       document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+    //       alert( document.getElementById("imgTest").innerHTML);
+    //     }
+    //     fileReader.readAsDataURL(fileToLoad);
+    //   }
+    //   // addadmin()
+    // }
