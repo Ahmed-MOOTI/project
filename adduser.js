@@ -967,7 +967,7 @@ function canceldir(i) {
                 <input id="inputFileToLoad" class="file-input" type="file" onchange="encodeImageFileAsURLdir()" class="rounded-circle">
             </div>
             <div id="imgTest">
-             <img src="${listdir[i].picturedir}" class="rounded-circle" width="304" height="236">
+             <img src="./images/img.jpg" class="rounded-circle" width="304" height="236">
             </div>
           </div>
           <div class="col-xs-12 bottom text-center">
@@ -1588,7 +1588,7 @@ function openFile(event) {
          document.getElementById("leftavatar").src = imgUpdate
          document.getElementById("topavatar").src = imgUpdate
 
-         listemp[i].pictureemp= document.getElementById("avatarimg").name
+         listemp[i].pictureemp= document.getElementById("avatarimg").src
          localStorage.setItem("employees", JSON.stringify(listemp));
          console.log(listemp)
           };
